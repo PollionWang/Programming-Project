@@ -18,9 +18,9 @@ int main()
     {
         indexarr[i] = i + 1;
     }
-    //step1£ºÉú³É20¸ö1-15µÄËæ»úÊıµÄtxtÎÄ¼ş
-    srand((unsigned)time(NULL));    //²¥ÖÖ
-    //½«Éú³ÉµÄËæ»úÊıĞ´ÈëtxtÎÄ¼ş
+    //step1ï¼šç”Ÿæˆ20ä¸ª1-15çš„éšæœºæ•°çš„txtæ–‡ä»¶
+    srand((unsigned)time(NULL));    //æ’­ç§
+    //å°†ç”Ÿæˆçš„éšæœºæ•°å†™å…¥txtæ–‡ä»¶
     for (int i = 0; i < 20; i++)
     {
         int j = 1 + rand() % 15;
@@ -34,23 +34,23 @@ int main()
     }
 
 
-    //step2£º½«Éú³ÉºÃµÄtxtÎÄ¼şÖĞµÄÊı¾İ´æµ½Êı×énumlistÖĞ·½±ãºóĞøÅÅĞò,²¢ÇÒ½«numlistµÄ¶ÔÓ¦ÔªËØË÷Òı´æ·Åµ½indexarrÖĞ£¬·½±ãºóĞø²éÕÒnumlistµÄÔªËØµÄË÷Òı
+    //step2ï¼šå°†ç”Ÿæˆå¥½çš„txtæ–‡ä»¶ä¸­çš„æ•°æ®å­˜åˆ°æ•°ç»„numlistä¸­æ–¹ä¾¿åç»­æ’åº,å¹¶ä¸”å°†numlistçš„å¯¹åº”å…ƒç´ ç´¢å¼•å­˜æ”¾åˆ°indexarrä¸­ï¼Œæ–¹ä¾¿åç»­æŸ¥æ‰¾numlistçš„å…ƒç´ çš„ç´¢å¼•
     int numlist[20];
     fopen_s(&randlist, "C:/Users/cloud/Desktop/RandList.txt", "r");
     if (randlist == NULL)
     {
         return 0;
     }
-    //´æÈënumlistÊı×é,±ãÓÚºóĞøµÄÅÅĞòËã·¨²Ù×÷
+    //å­˜å…¥numlistæ•°ç»„,ä¾¿äºåç»­çš„æ’åºç®—æ³•æ“ä½œ
     for (int k = 0; k < 20; k++)
     {
         fscanf_s(randlist, "%d;", &numlist[k]);
     }
 
 
-    //step3£º×Ô¶¨ÒåÑ¡ÔñÅÅĞò·½·¨
+    //step3ï¼šè‡ªå®šä¹‰é€‰æ‹©æ’åºæ–¹æ³•
     int method1;
-    printf("ÇëÑ¡ÔñÅÅĞò·½·¨´úºÅ£¨1-Ã°ÅİÅÅĞò£¬2-Ñ¡ÔñÅÅĞò£©£º");
+    printf("è¯·é€‰æ‹©æ’åºæ–¹æ³•ä»£å·ï¼ˆ1-å†’æ³¡æ’åºï¼Œ2-é€‰æ‹©æ’åºï¼‰ï¼š");
     scanf_s("%d", &method1);
     if (method1 == 1)
     {
@@ -62,7 +62,7 @@ int main()
     }
 
 
-    //step4£º½«ÅÅĞòºóµÄ½á¹û´òÓ¡Êä³öµ½sortedlistÎÄ¼şÖĞ
+    //step4ï¼šå°†æ’åºåçš„ç»“æœæ‰“å°è¾“å‡ºåˆ°sortedlistæ–‡ä»¶ä¸­
     fopen_s(&sortedlist, "C:/Users/cloud/Desktop/SortedList.txt", "a");
     if (sortedlist == NULL)
     {
@@ -73,11 +73,11 @@ int main()
         fprintf(sortedlist, "%d\n", numlist[i]);
     }
 
-    //step5£º²éÑ¯Î´ÅÅĞòÊı×é¶ÔÓ¦ÔªËØµÄË÷Òı
+    //step5ï¼šæŸ¥è¯¢æœªæ’åºæ•°ç»„å¯¹åº”å…ƒç´ çš„ç´¢å¼•
     int method2, searchnum;
-    printf("ÇëÑ¡ÔñÅÅĞò·½·¨´úºÅ£¨1-ÏßĞÔ²éÕÒ£¬2-¶ş·Ö²éÕÒ£©£º");
+    printf("è¯·é€‰æ‹©æ’åºæ–¹æ³•ä»£å·ï¼ˆ1-çº¿æ€§æŸ¥æ‰¾ï¼Œ2-äºŒåˆ†æŸ¥æ‰¾ï¼‰ï¼š");
     scanf_s("%d", &method2);
-    printf("ÇëÊäÈëĞèÒª²éÑ¯Ë÷ÒıµÄÊı×Ö£º");
+    printf("è¯·è¾“å…¥éœ€è¦æŸ¥è¯¢ç´¢å¼•çš„æ•°å­—ï¼š");
     scanf_s("%d", &searchnum);
     if (method2 == 1)
     {
@@ -113,7 +113,7 @@ int main()
 
 
 
-//Ã°ÅİÅÅĞò
+//å†’æ³¡æ’åº
 void Bubble_Sort(int* arr1, int* arr2, int size)
 {
     int i, j, s, z, tmp,tempindex;
@@ -131,7 +131,7 @@ void Bubble_Sort(int* arr1, int* arr2, int size)
                 arr2[j] = arr2[j + 1];
                 arr2[j + 1] = tempindex;
                 s = s + 1;
-                printf("µÚ%d´ÎÃ°ÅİÅÅĞòµÄ½á¹ûÎª:", s);
+                printf("ç¬¬%dæ¬¡å†’æ³¡æ’åºçš„ç»“æœä¸º:", s);
                 for (z = 0; z < size; z++)
                 {
                     printf("%d,", arr1[z]);
@@ -142,7 +142,7 @@ void Bubble_Sort(int* arr1, int* arr2, int size)
     }
 }
 
-//Ñ¡ÔñÅÅĞò
+//é€‰æ‹©æ’åº
 void Selection_Sort(int* arr1, int* arr2, int size)
 {
     int i, j, k, s, z, tmp,tempindex;
@@ -164,7 +164,7 @@ void Selection_Sort(int* arr1, int* arr2, int size)
         arr2[k] = arr2[i];
         arr2[i] = tempindex;
         s = s + 1;
-        printf("µÚ%d´ÎÑ¡ÔñÅÅĞòµÄ½á¹ûÎª:", s);
+        printf("ç¬¬%dæ¬¡é€‰æ‹©æ’åºçš„ç»“æœä¸º:", s);
         for (z = 0; z < size; z++)
         {
             printf("%d,", arr1[z]);
@@ -173,22 +173,22 @@ void Selection_Sort(int* arr1, int* arr2, int size)
     }
 }
 
-//ÏßĞÔ²éÑ¯
+//çº¿æ€§æŸ¥è¯¢
 void Linear_Search(int* arr1, int* arr2, int value, int size)
 {
-    printf("%dÔÚÔ­ÎÄ¼şÖĞµÄĞòºÅÊÇ", value);
+    printf("%dåœ¨åŸæ–‡ä»¶ä¸­çš„åºå·æ˜¯", value);
     for (int i = 0; i < size; i++)
         if (arr1[i] == value)
             printf("%d\t",arr2[i]);
 }
 
-//¶ş·Ö²éÑ¯
+//äºŒåˆ†æŸ¥è¯¢
 int Binary_Search(int* arr, int value, int size)
 {
     int left = 0;
     int right = size -1;
     int mid;
-    printf("%dÔÚÔ­ÎÄ¼şÖĞµÄĞòºÅÊÇ", value);
+    printf("%dåœ¨åŸæ–‡ä»¶ä¸­çš„åºå·æ˜¯", value);
     while(left <= right)
     {
         mid = (left+right)/2;
