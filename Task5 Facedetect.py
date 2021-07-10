@@ -1,6 +1,5 @@
 import cv2 #导入opencv库
 
-
 def face_detect_demo():
     gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY) #变灰预处理
     face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalcatface.xml')  #调用级联分类器以及xml人脸模型
