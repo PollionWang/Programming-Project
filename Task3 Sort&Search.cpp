@@ -204,19 +204,3 @@ int Binary_Search(int* arr, int value, int size)
             return mid;
     }
 }
-
-void findindex(char ch, char str[6][100], char position[100])
-{
-    int i = 0, j = 0, num = 0;
-    char ch1, ch2, ch3 = '0', ch;
-    if (ch = str[i][j])
-    {
-        num++;
-        itoa(i, &ch1, 10);
-        itoa(j, &ch2, 10);
-        if (j < 9)
-        {
-
-        }
-    }
-}
